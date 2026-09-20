@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<lab name="FortiGate-Project" version="1" scripttimeout="300" lock="0">
+  <topology>
+    <nodes>
+      <node id="1" name="Fortinet1" type="qemu" template="fortinet" image="fortinet-FGT-v7.6.7" console="telnet" cpu="1" cpulimit="0" ram="2048" ethernet="4" uuid="bcbae905-e532-4820-a96c-ec5d426afd89" qemu_options="-machine type=pc,accel=kvm -serial mon:stdio -nographic -no-user-config -nodefaults -display none -vga std -rtc base=utc" qemu_version="4.1.0" qemu_arch="x86_64" qemu_nic="virtio-net-pci" delay="0" icon="Firewall-2D-FGT-S.svg" config="0" left="516" top="243">
+        <interface id="0" name="port1" type="ethernet" network_id="3"/>
+        <interface id="1" name="port2" type="ethernet" network_id="1"/>
+        <interface id="2" name="port3" type="ethernet" network_id="2"/>
+        <interface id="3" name="port4" type="ethernet" network_id="6"/>
+      </node>
+      <node id="2" name="Fortinet2" type="qemu" template="fortinet" image="fortinet-FGT-v7.6.7" console="telnet" cpu="1" cpulimit="0" ram="2048" ethernet="4" uuid="d77f73c5-ee35-40cf-922e-2621f03fe066" qemu_options="-machine type=pc,accel=kvm -serial mon:stdio -nographic -no-user-config -nodefaults -display none -vga std -rtc base=utc" qemu_version="4.1.0" qemu_arch="x86_64" qemu_nic="virtio-net-pci" delay="0" icon="Firewall-2D-FGT-S.svg" config="0" left="855" top="240">
+        <interface id="0" name="port1" type="ethernet" network_id="3"/>
+        <interface id="1" name="port2" type="ethernet" network_id="4"/>
+        <interface id="2" name="port3" type="ethernet" network_id="5"/>
+        <interface id="3" name="port4" type="ethernet" network_id="6"/>
+      </node>
+      <node id="3" name="VPC3" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="PC-2D-Desktop-Generic-S.svg" config="0" left="381" top="375">
+        <interface id="0" name="eth0" type="ethernet" network_id="1"/>
+      </node>
+      <node id="4" name="VPC4" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="PC-2D-Desktop-Generic-S.svg" config="0" left="546" top="372">
+        <interface id="0" name="eth0" type="ethernet" network_id="2"/>
+      </node>
+      <node id="5" name="VPC5" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="PC-2D-Desktop-Generic-S.svg" config="0" left="816" top="372">
+        <interface id="0" name="eth0" type="ethernet" network_id="4"/>
+      </node>
+      <node id="6" name="VPC6" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="PC-2D-Desktop-Generic-S.svg" config="0" left="948" top="369">
+        <interface id="0" name="eth0" type="ethernet" network_id="5"/>
+      </node>
+    </nodes>
+    <networks>
+      <network id="1" type="bridge" name="Net-VPC3iface_0" left="501" top="394" visibility="0" icon="lan.png"/>
+      <network id="2" type="bridge" name="Net-VPC4iface_0" left="585" top="397" visibility="0" icon="lan.png"/>
+      <network id="3" type="bridge" name="Net-Fortinet1iface_0" left="573" top="286" visibility="0" icon="lan.png"/>
+      <network id="4" type="bridge" name="Net-VPC5iface_0" left="876" top="388" visibility="0" icon="lan.png"/>
+      <network id="5" type="bridge" name="Net-VPC6iface_0" left="981" top="397" visibility="0" icon="lan.png"/>
+      <network id="6" type="bridge" name="SD-WAN" left="690" top="132" visibility="1" icon="01-Cloud-Default.svg"/>
+    </networks>
+  </topology>
+  <objects>
+    <configs>
+      <config id="3">c2V0IHBjbmFtZSBWUENTCmlwIDE5Mi4xNjguMTAuMTAgMTkyLjE2OC4xMC4xIDI0Cg==</config>
+      <config id="4">c2V0IHBjbmFtZSBWUENTCmlwIDE5Mi4xNjguMjAuMTAgMTkyLjE2OC4yMC4xIDI0Cg==</config>
+      <config id="5">c2V0IHBjbmFtZSBWUENTCmlwIDE5Mi4xNjguMzAuMTAgMTkyLjE2OC4zMC4xIDI0Cg==</config>
+      <config id="6">c2V0IHBjbmFtZSBWUENTCmlwIDE5Mi4xNjguNDAuMTAgMTkyLjE2OC40MC4xIDI0Cg==</config>
+    </configs>
+  </objects>
+</lab>
